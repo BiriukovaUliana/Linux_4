@@ -13,12 +13,18 @@
 
 Однак у Linux процесу доступна лише половина адресного простору, тому максимальний обсяг становить приблизно: 2^63 байт ≈ 8 EB.
 
+##Результат роботи:
+<img width="571" height="95" alt="image" src="https://github.com/user-attachments/assets/d17538b2-3870-456a-9656-5900a92cd7ec" />
+
 # Завдання 4.2
 ## Поведінка malloc при від’ємному аргументі
 
 Було досліджено ситуацію, коли у malloc передається значення, отримане в результаті арифметичного виразу з від’ємним числом.
 
 Було встановлено, що через переповнення цілого типу (integer overflow) може утворитися дуже велике додатне число, яке передається у malloc. У такому випадку функція може намагатися виділити дуже великий блок пам’яті або повернути NULL.
+
+##Результат роботи:
+<img width="595" height="115" alt="image" src="https://github.com/user-attachments/assets/a4e98c6a-2a1d-4f82-a947-679c1b3d25eb" />
 
 # Завдання 4.3
 ## Поведінка malloc(0)
@@ -32,6 +38,9 @@
 
 Такий вказівник дозволено передавати у функцію free().
 
+##Результат роботи:
+<img width="816" height="134" alt="image" src="https://github.com/user-attachments/assets/fe04ae00-66e9-407b-8a60-afbf997888fc" />
+
 # Завдання 4.4
 ## Аналіз помилки у коді
 
@@ -42,6 +51,9 @@
 
 Правильним рішенням є встановлення вказівника у NULL після виклику free().
 
+##Результат роботи:
+<img width="806" height="465" alt="image" src="https://github.com/user-attachments/assets/5963aa66-524f-488f-a1c3-b8a9c3fa0f52" />
+<img width="821" height="511" alt="image" src="https://github.com/user-attachments/assets/937e7196-a1d0-4692-8084-b5d34ac1ba82" />
 
 # Завдання 4.5
 ## Поведінка realloc при помилці виділення пам’яті
@@ -51,6 +63,8 @@
 У такому випадку функція realloc повертає NULL, але початковий блок пам’яті залишається дійсним.  
 Тому програміст повинен самостійно звільнити стару пам’ять.
 
+##Результат роботи:
+<img width="643" height="110" alt="image" src="https://github.com/user-attachments/assets/4f8a5704-7ae0-4dc8-b9c8-83afb1dd1fb9" />
 
 # Завдання 4.6
 ## Особливі випадки realloc()
@@ -61,6 +75,8 @@ realloc(NULL, size) — працює аналогічно malloc(size)
 
 realloc(ptr, 0) — еквівалентно виклику free(ptr)
 
+##Результат роботи:
+<img width="614" height="114" alt="image" src="https://github.com/user-attachments/assets/f50f1708-3dc7-4388-89b7-adeef658dc41" />
 
 # Завдання 4.7
 ## Використання reallocarray()
@@ -69,6 +85,9 @@ realloc(ptr, 0) — еквівалентно виклику free(ptr)
 
 Ця функція є безпечнішою, оскільки перевіряє переповнення при множенні значень n * size перед виділенням пам’яті.
 
+##Результат роботи:
+
+<img width="766" height="201" alt="image" src="https://github.com/user-attachments/assets/9365e084-407d-4e81-bbeb-729006655567" />
 
 # Завдання 3 варіант
 ## Дослідження продуктивності malloc/free у потоках
@@ -86,6 +105,9 @@ realloc(ptr, 0) — еквівалентно виклику free(ptr)
 
 Результати показали, що використання локального пулу пам’яті зменшує конкуренцію між потоками та підвищує продуктивність програми.
 
+##Результат роботи:
+<img width="797" height="541" alt="image" src="https://github.com/user-attachments/assets/13bf4ddb-033c-484f-a548-a655602ea749" />
+<img width="794" height="542" alt="image" src="https://github.com/user-attachments/assets/f5eb2329-3b41-46cb-85f9-620f0eb267a9" />
 
 # Висновок
 
